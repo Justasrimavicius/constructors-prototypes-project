@@ -1,0 +1,54 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    margin: 0;
+}
+.book-library-position{
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+}
+.book{
+    background-color: gray;
+    max-height: 400px;
+}
+
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: solid 2px black;
+    z-index: 10;
+    background-color: white;
+}
+.popup.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.close-button{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: black;
+    pointer-events: none;
+}
+.overlay.active{
+    pointer-events: all;
+    opacity: 0.5;
+}
